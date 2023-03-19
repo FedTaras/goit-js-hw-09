@@ -1,3 +1,5 @@
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 import flatpickr from 'flatpickr';
 // Додатковий імпорт стилів
 import 'flatpickr/dist/flatpickr.min.css';
@@ -21,7 +23,7 @@ const options = {
   minuteIncrement: 1,
   onClose(selectedDates) {
     if (selectedDates[0].getTime() < options.defaultDate.getTime()) {
-      window.alert('Please choose a date in the future');
+      Notify.warning('Please choose a date in the future');
       return;
     }
     ref.btnStart.disabled = false;
