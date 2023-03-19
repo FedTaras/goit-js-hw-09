@@ -9,19 +9,15 @@ ref.btnStop.addEventListener('click', removeSetInterval);
 let timerId = null;
 
 function changeBGColor(ev) {
-  if (ev) {
-    timerId = setInterval(() => {
-      ref.body.style.backgroundColor = getRandomHexColor();
-    }, 1000);
-    ref.btnStart.disabled = true;
-  }
+  timerId = setInterval(() => {
+    ref.body.style.backgroundColor = getRandomHexColor();
+  }, 1000);
+  ref.btnStart.disabled = true;
 }
 
 function removeSetInterval(ev) {
-  if (ev) {
-    clearTimeout(timerId);
-    ref.btnStart.disabled = false;
-  }
+  clearTimeout(timerId);
+  ref.btnStart.disabled = false;
 }
 
 function getRandomHexColor() {
