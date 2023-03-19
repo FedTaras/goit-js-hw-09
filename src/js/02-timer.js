@@ -28,7 +28,7 @@ const options = {
     ref.btnStart.addEventListener('click', startOnClick);
 
     function startOnClick() {
-      timerId = setInterval(() => {
+      const timerId = setInterval(() => {
         ref.inputDate.disabled = true;
         delta = selectedDates[0].getTime() - Date.now();
         const { days, hours, minutes, seconds } = convertMs(delta);
